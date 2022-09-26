@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul li {
+    list-style: none;
+}
+
+header {
+    height: 30px;
+    padding: 0 30px 0 30px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .brand-name {
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+
+        strong {
+            color: orange;
+        }
+    }
+
+    .brand-logo-img {
+        height: 20px;
+    }
+
+    .top-menu {
+        display: flex;
+        gap: 2rem;
+
+        &-items {
+            a {
+                color: white;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+.product-menu-panel {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    height: 70px;
+    align-items: center;
+
+    .product-menu-list {
+        display: flex;
+        gap: 1rem;
+
+        .product-menu-items {
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+.jumbotron {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        height: 40vh;
+    }
+
+    h1 {
+        font-size: 10rem;
+        // letter-spacing: 10px;
+    }
+
+    h2 {
+        font-size: 3rem;
+        // letter-spacing: 100px;
+    }
+}
