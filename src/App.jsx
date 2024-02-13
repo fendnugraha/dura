@@ -1,9 +1,18 @@
+import About from "./Components/About";
+import Contact from "./Components/Contact";
 import Navbar from "./Components/Navbar";
+import Shop from "./Components/Shop";
+import duraLogo from "./assets/dura-logo.svg";
 function App() {
   return (
     <>
       <Navbar />
-      {/* <h1 className="text-3xl font-bold underline pt-16">DURA Apparel</h1> */}
+      <section className="flex justify-center items-center h-screen" id="home">
+        <img src={duraLogo} alt="logo" width={500} className="mx-auto" />
+      </section>
+      <Shop />
+      <About />
+      <Contact />
     </>
   );
 }

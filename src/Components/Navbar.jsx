@@ -1,12 +1,12 @@
-import duraLogo from "../assets/dura-hr.svg";
-import { HeartIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/24/outline";
+import duraLogo from "../assets/dura-logo.svg";
+import { HeartIcon, MagnifyingGlassIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
+import Nav from "./Nav";
 export default function Navbar() {
   const [showHamburger, setShowHamburger] = useState(false);
   const toggleHamburger = () => {
     setShowHamburger(!showHamburger);
-    console.log(showHamburger);
   };
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Navbar() {
   }, [showHamburger]);
 
   return (
-    <header className="group navbar w-full bg-transparent text-slate-700 font-normal fixed top-0 hover:shadow-md transition duration-500 z-50 p-6">
+    <header className="group navbar w-full bg-white bg-opacity-75 backdrop-blur-sm text-slate-700 font-normal fixed top-0 hover:shadow-md transition duration-500 z-50 p-6">
       <div className="container mx-auto">
         <div className="flex justify-between items-center relative">
           <div className="flex gap-4 items-center md:hidden">
@@ -39,17 +39,30 @@ export default function Navbar() {
               <img src={duraLogo} alt="logo" className="" width={120} />
             </div>
           </div>
+
           <div className="hidden md:block">
             <img src={duraLogo} alt="logo" className="" width={120} />
           </div>
+          <div className="hidden md:block">
+            <Nav className="" />
+          </div>
           <div className="flex gap-4">
-            <HeartIcon className="w-6" />
-            <ShoppingCartIcon className="w-6" />
-            <UserIcon className="w-6" />
+            <a href="">
+              <MagnifyingGlassIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
+            </a>
+            <a href="">
+              <HeartIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
+            </a>
+            <a href="">
+              <ShoppingCartIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
+            </a>
+            <a href="">
+              <UserIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
+            </a>
           </div>
         </div>
       </div>
-      <div className={`transition-all duration-500 absolute top-0 ${showHamburger ? "left-0 opacity-100" : "-left-full opacity-0"}`}>{showHamburger && <Sidebar setShowHamburger={setShowHamburger} />}</div>
+      <div className={`transition-all duration-500 absolute top-0 ${showHamburger ? "left-0 opacity-100" : "-left-full opacity-0"}`}>{showHamburger && <Sidebar setShowHamburger={toggleHamburger} />}</div>
     </header>
   );
 }
