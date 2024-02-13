@@ -3,6 +3,7 @@ import { HeartIcon, MagnifyingGlassIcon, ShoppingCartIcon, UserIcon } from "@her
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Nav from "./Nav";
+import { Link } from "react-scroll";
 export default function Navbar() {
   const [showHamburger, setShowHamburger] = useState(false);
   const toggleHamburger = () => {
@@ -41,7 +42,9 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <img src={duraLogo} alt="logo" className="" width={120} />
+            <Link to="home" smooth={true} duration={1000}>
+              <img src={duraLogo} alt="logo" className="cursor-pointer" width={120} />
+            </Link>
           </div>
           <div className="hidden md:block">
             <Nav className="" />
