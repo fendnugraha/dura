@@ -2,6 +2,7 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import duraLogo from "../assets/dura-logo.svg";
 import Nav from "./Nav";
+import { Link } from "react-scroll";
 export default function Sidebar({ setShowHamburger }) {
   return (
     <>
@@ -14,7 +15,9 @@ export default function Sidebar({ setShowHamburger }) {
           }}>
           <XMarkIcon className="h-6 w-6 hover:rotate-180 transition-transform duration-500" />
         </button>
-        <img src={duraLogo} alt="logo" width={150} className="mx-auto top-5 hover:scale-105 transition-transform duration-300" />
+        <Link to="home" smooth={true} duration={1000}>
+          <img src={duraLogo} alt="logo" width={150} className="mx-auto top-5 hover:scale-105 transition-transform duration-300" />
+        </Link>
         <div>
           <Nav className={"mt-10 flex-col"} />
         </div>

@@ -7,8 +7,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <section className="flex justify-center items-center h-screen" id="home">
-        <img src={duraLogo} alt="logo" width={500} className="mx-auto" />
+      <section className="flex justify-center flex-col items-center h-screen bg-[url('https://source.unsplash.com/random/1920x1080/?fashion')] bg-cover bg-center" id="home">
+        <img src={duraLogo} alt="logo" width={800} className="mx-auto" />
+        <button className="text-xl text-white font-black mt-10 p-5 bg-slate-800 w-[200px] hover:bg-slate-600">SHOP NOW</button>
       </section>
       <Shop />
       <About />
