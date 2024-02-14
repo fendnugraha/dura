@@ -1,13 +1,19 @@
 import duraLogo from "../assets/dura-logo.svg";
-import { HeartIcon, MagnifyingGlassIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/24/outline";
+import { HeartIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Nav from "./Nav";
 import { Link } from "react-scroll";
+import Cart from "./Cart";
 export default function Navbar() {
   const [showHamburger, setShowHamburger] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const toggleHamburger = () => {
     setShowHamburger(!showHamburger);
+  };
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
   };
 
   useEffect(() => {
@@ -50,22 +56,20 @@ export default function Navbar() {
             <Nav className="" />
           </div>
           <div className="flex gap-4">
-            <a href="">
-              <MagnifyingGlassIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
-            </a>
-            <a href="">
+            <button>
               <HeartIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
-            </a>
-            <a href="">
+            </button>
+            <button onClick={() => toggleCart()}>
               <ShoppingCartIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
-            </a>
-            <a href="">
+            </button>
+            <button>
               <UserIcon className="w-6 hover:scale-105 hover:text-orange-400 transition duration-300 delay-100" />
-            </a>
+            </button>
           </div>
         </div>
       </div>
       <div className={`transition-all duration-500 absolute top-0 ${showHamburger ? "left-0 opacity-100" : "-left-full opacity-0"}`}>{showHamburger && <Sidebar setShowHamburger={toggleHamburger} />}</div>
+      <Cart showCart={showCart} onClose={toggleCart} />
     </header>
   );
 }
